@@ -1,0 +1,16 @@
+5b3dc277c7338eb0fe93905ccbbfaba5 *DESCRIPTION
+9fdfeb11f7ddba6f3aab9aaa6b1ac5dd *NAMESPACE
+2f7bb2380aa312f22ea0c5a4dbb2a6f1 *NEWS
+03d46cfb4468b87c0d8f5eac65ba2cca *R/bartels.rank.test.R
+d6fcf57e103a1801e57a4de0036be8b7 *R/difference.sign.test.R
+a97fbababa5d0536100440dea47703c3 *R/rank.test.R
+2155e63d6c1cedfe5b2fffd80c795afd *R/runs.test.R
+820ca5becb98dfaf1feae0ee75690cef *R/turning.point.test.R
+23af0f8001456745f5a14ec3fc4a8922 *data/sweetpotato.rda
+f4453154a5c2934e4274574535fe7a4b *man/bartels.rank.test.Rd
+3bece18824645e373a63237f69dd1913 *man/difference.sign.test.Rd
+db11e63ecdc071be3a197c752033b6d8 *man/randtests-package.Rd
+42cb01cf36e29d6e1ee554f2a7ddd84c *man/rank.test.Rd
+3f1741039cda01ea9072837c741da007 *man/runs.test.Rd
+974d7399ff1965dbe6f851dcc9a0f775 *man/sweetpotato.Rd
+bd6785d5ff1c334f521577a2d46ee372 *man/turning.point.test.Rd
