@@ -1,4 +1,11 @@
 # NEWS
 
+Version 0.3 (Date: 2014-03-18)
+Added Cox Stuart trend test.
+Added the exact distribution of the runs statistic.
+Enhanced the help files
+Fixed an error in turning point test.
+
 Version 0.2 (Date: 2014-01-22)
-First release of the package. This is a beta version and the package is under development.
+First release of the package. 
+This is a beta version and the package is under development.

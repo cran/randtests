@@ -1,25 +1,32 @@
-##
+## x<-c(1,3,3,4,6,8,9,3,5,6,7,8,9,10,11,12, 13, 14,15)
 ##  turning point code
 ##
-turning.point.test <- function(x){
+turning.point.test <- function(x, alternative="two.sided"){
   stopifnot(is.numeric(x))
-  # Delete consecutive repeated values
-  if (min(diff(x))==0){
+  dname <- deparse(substitute(x))
+   # Delete consecutive repeated values
+  if (min(abs(diff(x)))==0){
     d<-which(diff(x) %in% 0)
     x<-x[-d]
   }
-  # Main code  
+    # Main code  
   n <- length(x)
   mu <- 2*(n-2)/3
   var <- (16*n-29)/90
   
-  #ts <- embed(x,3)
-  #test.sum <- sum((ts[,2] > ts[,1] & ts[,2] > ts[,3]) | (ts[,2] < ts[,1] & ts[,2] < ts[,3]))
   tp <- sign(apply(embed(x,3), 1, diff))
   tp <- tp[1,]*tp[2,]
   test.sum <- -sum(tp[tp<0])
   test <- (test.sum-mu)/sqrt(var)
-  return(test)
-  #p.value <- 2*(1-pnorm(test))
-  #structure(list(test.sum=test.sum,test=test,p.value=p.value,mu=mu,var=var))
+  # p-value
+  pv0 <- pnorm(test)
+  if (alternative=="two.sided"){pv <- 2*min(pv0,1-pv0); alternative<-"non randomness"}
+  if (alternative=="left.sided"){pv <- pv0; alternative<-"positive serial correlation"}
+  if (alternative=="right.sided"){pv <- 1-pv0; alternative<-"negative serial correlation"}
+  # output
+  names(n)="n"
+  rval <- list(statistic = c(statistic=test), tp=test.sum, p.value = pv, method = "Turning Point Test", 
+               data.name = dname, parameter=n, n=n, alternative=alternative) 
+  class(rval) <- "htest"
+  return(rval)
 }

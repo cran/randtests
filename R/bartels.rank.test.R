@@ -22,7 +22,11 @@ bartels.rank.test <- function(x, alternative="two.sided", pvalue="normal"){
   x<-na.omit(x)
   stopifnot(is.numeric(x))
   n <- length(x)
-  if (alternative != "two.sided" & alternative != "left.sided" & alternative != "right.sided"){stop("must give a valid alternative")}
+  if (alternative == "t"){alternative <- "two.sided"} 
+  if (alternative == "l"){alternative <- "left.sided"}
+  if (alternative == "r"){alternative <- "right.sided"}    
+  if (alternative != "two.sided" & alternative != "left.sided" & alternative != "right.sided")
+    {stop("must give a valid alternative")}
   if (n < 10){stop("sample size must be greater than 9")}
   # unique
   rk <- rank(x)
@@ -43,15 +47,22 @@ bartels.rank.test <- function(x, alternative="two.sided", pvalue="normal"){
      pv0 <- pnorm((RVN - mu) / sqrt(vr))
   }
     
-  if (alternative=="two.sided"){pv <- 2*min(pv0,1-pv0); alternative<-"nonrandomness"}
-  if (alternative=="left.sided"){pv <- pv0; alternative<-"trend"}
-  if (alternative=="right.sided") {pv <- 1-pv0; alternative<-"systematic oscillation"}
+  if (alternative=="two.sided"){
+    pv <- 2*min(pv0,1-pv0) 
+    alternative<-"nonrandomness"
+  }
+  if (alternative=="left.sided"){
+    pv <- pv0 
+    alternative<-"trend"
+  }
+  if (alternative=="right.sided"){
+    pv <- 1-pv0
+    alternative<-"systematic oscillation"
+  }
 
-  names(n)="n"
-  names(mu)="mu"
-  names(vr)="vr"
-  rval <- list(statistic = c(statistic=RVN, mu, vr), p.value = pv, 
-               method = "Bartels Ratio Test", data.name = dname, parameter=n, n=n, alternative=alternative)  
+  test <- (RVN - mu) / sqrt(vr)
+  rval <- list(statistic = c(statistic=test), nm=sum(d^2), rvn=RVN, mu=mu, var=vr, p.value = pv, 
+               method = "Bartels Ratio Test", data.name = dname, parameter=c(n=n), n=n, alternative=alternative)  
   class(rval) <- "htest"
   return(rval)
   
