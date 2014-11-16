@@ -8,13 +8,14 @@ Wald-Wolfowitz Runs Test
 Performs the Wald-Wolfowitz runs test of randomness for continuous data.
 }
 \usage{
-runs.test(x, alternative, threshold, pvalue)
+runs.test(x, alternative, threshold, pvalue, plot)
 }
 \arguments{
   \item{x}{a numeric vector containing the observations}
   \item{alternative}{a character string with the alternative hypothesis. Must be one of "\code{two.sided}" (default), "\code{left.sided}" or "\code{right.sided}". You can specify just the initial letter.}
   \item{threshold}{the cut-point to transform the data into a dichotomous vector}
-  \item{pvalue}{a character string specifying the method used to compute the p-value. Must be one of normal (default), or exact.}  
+  \item{pvalue}{a character string specifying the method used to compute the p-value. Must be one of normal (default), or exact.} 
+  \item{plot}{a logic value to select whether a plot should be created. If 'TRUE', then the graph will be plotted.}
 }
 \details{
 Data is transformed into a dichotomous vector according as each values is above or below a given \code{threshold}. Values equal to the level are removed from the sample. 
@@ -31,17 +32,17 @@ A list with class "htest" containing the components:
 \item{alternative}{a character string describing the alternative hypothesis.}
 \item{method}{a character string indicating the test performed.}
 \item{data.name}{a character string giving the name of the data.}
-\item{runs}{the total number of runs (not show on screen).}
-\item{mu}{the mean value of the statistic test (not show on screen).}
-\item{var}{the variance of the statistic test (not show on screen).}
+\item{runs}{the total number of runs (not shown on screen).}
+\item{mu}{the mean value of the statistic test (not shown on screen).}
+\item{var}{the variance of the statistic test (not shown on screen).}
 }
 \references{
 Brownlee, K. A. (1965). \emph{Statistical Theory and Methodology in Science and Engineering}, 2nd ed. New York: Wiley.
 
-Gibbons, J.D. and Chakraborti, S. (2003). \emph{Nonparametric Statistical Inference}, 4th ed. (pp. 78-86).
+Gibbons, J.D. and Chakraborti, S. (2003). \emph{Nonparametric Statistical Inference}, 4th ed. (pp. 78--86).
 URL: \url{http://books.google.pt/books?id=dPhtioXwI9cC&lpg=PA97&ots=ZGaQCmuEUq}
 
-Wald, A. and Wolfowitz, J. (1940). On a test whether two samples are from the same population, \emph{Ann. Math Statist.} \bold{11}, 147-162.
+Wald, A. and Wolfowitz, J. (1940). On a test whether two samples are from the same population, \emph{The Annals of Mathematical Statistics} \bold{11}, 147--162. doi:10.1214/aoms/1177731909. \url{http://projecteuclid.org/euclid.aoms/1177731909}
 }
 \author{Frederico Caeiro}
 \examples{

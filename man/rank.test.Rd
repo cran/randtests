@@ -34,7 +34,7 @@ A list with class "htest" containing the components:
 \references{
 Brockwell, P.J. and Davis, R.A. (2002). \emph{Introduction to Time Series and Forecasting}, 2nd edition, Springer (p. 37).
 
-Mann, H.B. (1945). Nonparametric test against trend. \emph{Econometrica}, \bold{13}, 245-259.
+Mann, H.B. (1945). Nonparametric test against trend. \emph{Econometrica}, \bold{13}, 245--259.
 
 Kendall, M. (1990). \emph{Rank correlation methods}, 5th edition. Oxford University Press, USA.
 }

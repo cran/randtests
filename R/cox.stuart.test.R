@@ -36,7 +36,8 @@ cox.stuart.test <- function(x, alternative="two.sided"){
     alternative<-"decreasing trend"
   }
   if (alternative=="right.sided"){p.value<- 1-pbinom(t-1,n,0.5);alternative<-"increasing trend"}
-  if (alternative=="two.sided"){p.value<-2*min(1-pbinom(t-1,n,0.5),pbinom(t,n,0.5));alternative<-"non randomness"}
+  if (alternative=="two.sided"){p.value<-2*(min(1-pbinom(t-1,n,0.5),pbinom(t,n,0.5)));alternative<-"non randomness"}
+  #pvalue<-min(pvalue,1)
   #names(n)="n"
   rval<-list(statistic=c(statistic=t), alternative=alternative, p.value=p.value,
             method="Cox Stuart test", parameter=c(n=n), data.name=dname)

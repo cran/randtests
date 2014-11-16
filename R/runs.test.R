@@ -1,7 +1,7 @@
 ##
 ##  Wald Wolfowitz Runs Test
 ##
-runs.test <- function(x, alternative="two.sided", threshold=median(x), pvalue="normal"){
+runs.test <- function(x, alternative="two.sided", threshold=median(x), pvalue="normal", plot=FALSE){
   # Performs the Runs Test for Randomness.
   #
   # Args:
@@ -21,24 +21,33 @@ runs.test <- function(x, alternative="two.sided", threshold=median(x), pvalue="n
   if (alternative != "two.sided" & alternative != "left.sided" & alternative != "right.sided")
     {stop("must give a valid alternative")}
   # Remove NAs
-  x<-na.omit(x)
+  x <- na.omit(x)
   stopifnot(is.numeric(x))
-  x <- x - threshold
   # Remove values equal to the level
-  x<-x[x!=0]
-  s <- sign(x)
+  x <- x[x!=threshold]
+  s <- sign(x-threshold)
   n1 <- length(s[s>0]) 
   n2 <- length(s[s<0])
   runs <- rle(s)
   r1 <- length(runs$lengths[runs$values==1])
   r2 <- length(runs$lengths[runs$values==-1])  
-  n<-n1+n2
+  n <- n1+n2
   mu <- 1 + 2*n1*n2/(n1+n2)
   vr <- 2*n1*n2*(2*n1*n2-n1-n2)/(n^2*(n-1))
   rr <- r1+r2
-  pv<-0
+  #
+  # Plot the data if requested by the user
+  if (plot){
+    plot((1:n)[s>0],x[s>0], xlim=c(1,n), ylim=c(min(x),max(x)), xlab="", ylab=dname)
+    points((1:n)[s<0],x[s<0], col="red")
+    abline(h=threshold, col=gray(.4))
+    for (i in 1:(n-1)){
+      if (s[i]*s[i+1]<0){abline(v=i+0.5, lty=2)}
+    }
+  }
+  #
   # Computes the p-value
-  
+  pv <- 0
   if (pvalue == "exact"){    
     if (alternative=="two.sided"){
       pv1<-sum(druns(1:rr,n1,n2))

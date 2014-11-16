@@ -15,7 +15,7 @@ data(sweetpotato)
 }
 %- maybe also 'usage' for other objects documented here.
 \source{
-Agricultural Statistics 1939, p. 243. 
+Agricultural Statistics 1939, p. 243.\cr
 URL: \url{http://archive.org/stream/agriculturalsat00unit#page/243/mode/1up}
 
 Moore, G.H. and  Wallis, W.A. (1941). A Significance Test for Time Series and Other Ordered Observations. Technical paper. \emph{NBER}.

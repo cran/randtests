@@ -27,28 +27,38 @@ bartels.rank.test <- function(x, alternative="two.sided", pvalue="normal"){
   if (alternative == "r"){alternative <- "right.sided"}    
   if (alternative != "two.sided" & alternative != "left.sided" & alternative != "right.sided")
     {stop("must give a valid alternative")}
-  if (n < 10){stop("sample size must be greater than 9")}
+  if (n < 3){stop("sample size must be greater than 2")}
   # unique
   rk <- rank(x)
   d <- diff(rk)
   #d.rank <- n*(n^2-1)/12
-  d.rank <- sum(rk^2)-n*(mean(rk)^2)
+  nm <- sum(rk^2)
+  d.rank <- nm-n*(mean(rk)^2)
   RVN <- sum(d^2)/d.rank
   mu <- 2
   vr <- (4*(n-2)*(5*n^2-2*n-9))/(5*n*(n+1)*(n-1)^2)
   # 
   # Computes the p-value
-  if (pvalue == "auto"){pvalue<-ifelse(n<=100,"beta","normal")}
+  if (pvalue == "auto"){
+    pvalue <- ifelse(n<=100,"beta","normal")
+    if (n<10) pvalue <- "exact"
+  }
+  if (pvalue == "exact"){
+    pv <- pbartelsrank(q=c(nm-1,nm), n)
+    pv0 <- pv[2]
+    pv1 <- pv[1]
+  }
+    
   if (pvalue == "beta"){
      btp <- (5*n*(n+1)*(n-1)^2)/(2*(n-2)*(5*n^2-2*n-9))-1/2
      pv0 <- pbeta(RVN/4,shape1=btp,shape2=btp)
+     pv1 <- 1-pv0
   }
-  if (pvalue=="normal"){ 
-     pv0 <- pnorm((RVN - mu) / sqrt(vr))
-  }
-    
+  if (pvalue=="normal") pv0 <- pnorm((RVN - mu) / sqrt(vr))
+  if (pvalue=="beta" | pvalue=="normal") pv1 <- 1-pv0  
+  #
   if (alternative=="two.sided"){
-    pv <- 2*min(pv0,1-pv0) 
+    pv <- 2*min(pv0, pv1) 
     alternative<-"nonrandomness"
   }
   if (alternative=="left.sided"){
@@ -56,7 +66,7 @@ bartels.rank.test <- function(x, alternative="two.sided", pvalue="normal"){
     alternative<-"trend"
   }
   if (alternative=="right.sided"){
-    pv <- 1-pv0
+    pv <- pv1
     alternative<-"systematic oscillation"
   }
 
