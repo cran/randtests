@@ -1,4 +1,7 @@
 # NEWS
+Version 1.0.1 (Date: 2022-06-19)
+Fixed several build errors.
+
 Version 1.0 (Date: 2014-11-16)
 Added the exact distribution of the Bartels Rank Test Statistic NM.
 Added a plot option to the runs test.

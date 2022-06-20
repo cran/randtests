@@ -1,5 +1,6 @@
-# Default NAMESPACE created by R
-# Remove the previous line if you edit this file
-
+importFrom("grDevices", "gray")
+importFrom("graphics", "abline", "points")
+importFrom("stats", "embed", "median", "na.omit", "pbeta", "pbinom",
+             "pnorm", "runif")
 # Export all names
 exportPattern(".")

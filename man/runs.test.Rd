@@ -42,7 +42,7 @@ Brownlee, K. A. (1965). \emph{Statistical Theory and Methodology in Science and 
 Gibbons, J.D. and Chakraborti, S. (2003). \emph{Nonparametric Statistical Inference}, 4th ed. (pp. 78--86).
 URL: \url{http://books.google.pt/books?id=dPhtioXwI9cC&lpg=PA97&ots=ZGaQCmuEUq}
 
-Wald, A. and Wolfowitz, J. (1940). On a test whether two samples are from the same population, \emph{The Annals of Mathematical Statistics} \bold{11}, 147--162. doi:10.1214/aoms/1177731909. \url{http://projecteuclid.org/euclid.aoms/1177731909}
+Wald, A. and Wolfowitz, J. (1940). On a test whether two samples are from the same population, \emph{The Annals of Mathematical Statistics} \bold{11}, 147--162. doi:10.1214/aoms/1177731909. \url{https://projecteuclid.org/journals/annals-of-mathematical-statistics/volume-11/issue-2/On-a-Test-Whether-Two-Samples-are-from-the-Same/10.1214/aoms/1177731909.full}
 }
 \author{Frederico Caeiro}
 \examples{

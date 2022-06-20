@@ -51,7 +51,7 @@ Bartels, R. (1982). The Rank Version of von Neumann's Ratio Test for Randomness,
 Gibbons, J.D. and Chakraborti, S. (2003). \emph{Nonparametric Statistical Inference}, 4th ed. (pp. 97--98).\cr 
 URL: \url{http://books.google.pt/books?id=dPhtioXwI9cC&lpg=PA97&ots=ZGaQCmuEUq}
 
-von Neumann, J. (1941). Distribution of the Ratio of the Mean Square Successive Difference to the Variance. \emph{The Annals of Mathematical Statistics} \bold{12}(4), 367--395. doi:10.1214/aoms/1177731677. \url{http://projecteuclid.org/euclid.aoms/1177731677}
+von Neumann, J. (1941). Distribution of the Ratio of the Mean Square Successive Difference to the Variance. \emph{The Annals of Mathematical Statistics} \bold{12}(4), 367--395. doi:10.1214/aoms/1177731677. \url{https://projecteuclid.org/journals/annals-of-mathematical-statistics/volume-12/issue-4/Distribution-of-the-Ratio-of-the-Mean-Square-Successive-Difference/10.1214/aoms/1177731677.full}
 }
 %\note{
 %%  ~~further notes~~
