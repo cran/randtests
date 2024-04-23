@@ -1,5 +1,5 @@
 \name{randtests-package}
-\alias{randomtests-package}
+\alias{randtests-package}
 \docType{package}
 \title{
 Testing randomness in R
@@ -11,8 +11,8 @@ The package \code{randtests} implements several nonparametric randomness tests o
 \tabular{ll}{
 Package: \tab randomtests\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2014-11-16\cr
+Version: \tab 1.0.2\cr
+Date: \tab 2024-04-22\cr
 License: \tab GPL (>=2)\cr
 LazyLoad: \tab yes\cr
 }

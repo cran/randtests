@@ -1,6 +1,6 @@
-639cbb9686b1b0a7d8255f2868eb9aa6 *DESCRIPTION
+6fb8fb0b4059279f4ade424f6b66ef19 *Changes
+dd43dff97a2df2c951b72e634a1f2e49 *DESCRIPTION
 f56b2f349505c596177a5aa89b0eddd8 *NAMESPACE
-1b0bf4ee966654dd470090ed1e6c546a *NEWS
 2840539612df3728e9fa61ac233c8992 *R/bartels.rank.test.R
 2b88901d7257a14eeed2f49b21c6be8f *R/cox.stuart.test.R
 f21cd2d65c23dc37d304a09d8d31440b *R/difference.sign.test.R
@@ -15,7 +15,7 @@ a52432ca1deff9133ea9c2bb8f2e239f *R/turning.point.test.R
 9ad9d0949463c4f3672353af8df7e9d9 *man/cox.stuart.test.Rd
 4e86f4781e8d51852170ad2b600fdef6 *man/difference.sign.test.Rd
 815ffb73ea1e6fe8288f0102a7f97766 *man/permut.Rd
-482ad7514ac424d16a51954bf0deb036 *man/randtests-package.Rd
+277dfed773d46ff36ee6aea03c372625 *man/randtests-package.Rd
 bf0798f1b7dfc46e75b150b3e331aa95 *man/randtests.aux.Rd
 7678aa4eaa40914a16176553b0b1ed07 *man/rank.test.Rd
 1b018fb5d6a1db018f85841f5ebed488 *man/runs.Rd
